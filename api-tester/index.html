@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>API tester</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="ai.js"></script>
+    <script defer src="products.js"></script>
+  </head>
+  <body>
+    <h1>API tester</h1>
+
+    <h2>API</h2>
+    <div>
+      <input name="url" type="text" value="http://localhost:8000" />
+      <select name="team">
+        <option value="hedgehog">Hedgehog</option>
+        <option value="gragon">Dragon</option>
+        <option value="wolf">Wolf</option>
+      </select>
+    </div>
+
+    <div class="block">
+      <h2>AI</h2>
+      <input type="text" name="ai-query" value="Name 5 African mammals" />
+      <button class="ai-submit">Search!</button>
+      <pre class="ai-result"></pre>
+    </div>
+
+    <div class="block">
+      <h2>Products</h2>
+      <input type="text" name="products-query" />
+      <h3>Sort</h3>
+      <label>
+        <input type="radio" name="products-sort" value="price" />
+        Price
+      </label>
+      <label>
+        <input type="radio" name="products-sort" value="rating" />
+        Rating
+      </label>
+      <label>
+        <input type="radio" name="products-sort" value="title" checked />
+        Title
+      </label>
+      <h3>Pagination</h3>
+      <label>
+        Page
+        <input type="number" name="products-page" value="1" />
+      </label>
+      <label>
+        Page size
+        <input type="number" name="products-page-size" value="10" />
+      </label>
+      <button class="products-submit">Search!</button>
+      <pre class="products-result"></pre>
+    </div>
+  </body>
+</html>

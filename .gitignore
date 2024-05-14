@@ -1,0 +1,39 @@
+# Logs
+*.log
+
+# Mac
+.DS_Store
+*~
+*.swp
+*.swo
+
+# npm
+/node_modules/
+npm-debug.log
+
+# Python
+*.py[cod]
+__pycache__
+__pycache__/
+.pytest_cache
+
+# Distribution / packaging
+env/
+.env
+.env.local
+.env.production
+
+# editor
+.vscode/settings.json
+
+# Uploaded assets
+/media/
+
+# Static assets
+/static/
+
+# Django
+db.sqlite3
+
+# misc
+notes.txt

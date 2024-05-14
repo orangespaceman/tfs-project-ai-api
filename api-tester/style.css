@@ -1,0 +1,36 @@
+input[type="text"] {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid black;
+}
+
+button {
+    appearance: none;
+    background: orange;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkorange;
+}
+
+.block {
+    display: inline-block;
+    width: 40%;
+    margin: 2%;
+    padding: 2%;
+    vertical-align: top;
+    background: #eee;
+}
+
+pre {
+    display: block;
+    padding: 20px;
+    background: #ddd;
+    width: 90%;
+    overflow: auto;
+}
