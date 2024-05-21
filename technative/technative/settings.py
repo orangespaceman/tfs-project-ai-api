@@ -151,8 +151,8 @@ MEDIA_ROOT = ROOT_DIR / "media/"
 CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(",")
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://\w+\.netlify\.app$",
-    r"^https://\w+\.github\.io$",
+    r"^https://[\w-]+\.netlify\.app$",
+    r"^https://[\w-]+\.github\.io$",
 ]
 
 CORS_ALLOW_METHODS = (
