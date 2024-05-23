@@ -15,14 +15,13 @@ def index(request, model):
         products = model.objects.filter(title__icontains=query)
 
     # handle sort param
+    order = ["title", "id"]
     sort = request.GET.get("sort")
     if sort == "price":
-        order = "price"
+        order.insert(0, "price")
     elif sort == "rating":
-        order = "-stars"
-    else:
-        order = "title"
-    products = products.order_by(order)
+        order.insert(0, "-stars")
+    products = products.order_by(*order)
 
     # handle pagination
     page_size = int(request.GET.get("page-size", 10000))
