@@ -10,4 +10,4 @@
 ### Dev
 
 - [Local setup](./docs/dev/local-setup.md)
-- [Server setup](./docs/dev/sever-setup.md)
+- [Server setup](./docs/dev/server-setup.md)
