@@ -9,8 +9,8 @@ function requestAI() {
 
     const searchParams = new URLSearchParams(params);
 
-    const teamEl = document.querySelector("select[name='team']");
-    var team = teamEl.options[teamEl.selectedIndex].value;
+    const teamEl = document.querySelector("input[name='team']");
+    var team = teamEl.value;
 
     fetch(`${api}/ai/${team}?${searchParams.toString()}`, {
         headers: {

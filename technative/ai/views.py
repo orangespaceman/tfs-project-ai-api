@@ -26,3 +26,13 @@ def dragon(request):
 def hedgehog(request):
     query = request.GET.get("query")
     return index(query, "hedgehog")
+
+
+def chicken(request):
+    query = request.GET.get("query")
+    return index(query, "chicken")
+
+
+def egg(request):
+    query = request.GET.get("query")
+    return index(query, "egg")

@@ -40,3 +40,11 @@ class DragonProduct(AbstractProduct):
 
 class HedgehogProduct(AbstractProduct):
     image = models.ImageField(upload_to="images/products/hedgehog/")
+
+
+class ChickenProduct(AbstractProduct):
+    image = models.ImageField(upload_to="images/products/chicken/")
+
+
+class EggProduct(AbstractProduct):
+    image = models.ImageField(upload_to="images/products/egg/")

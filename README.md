@@ -1,4 +1,4 @@
-# Project 2 API
+# AI Project API
 
 ## Docs
 

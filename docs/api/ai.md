@@ -13,7 +13,7 @@ Retrieve information from the AI.
 
 ### URL Parameters
 
-- `{team}` (required): Specifies the team for which information is requested. Possible values: "wolf", "dragon", or "hedgehog".
+- `{team}` (required): Specifies the team for which information is requested.
 
 ### Query Parameters
 
@@ -23,7 +23,7 @@ Retrieve information from the AI.
 
 ```
 https://[url]/ai/wolf?query=Name+5+African+mammals
-https://[url]/ai/hedgehog?query=Name+5+African+birds
+https://[url]/ai/egg?query=Name+5+African+birds
 ```
 
 ## Success Response

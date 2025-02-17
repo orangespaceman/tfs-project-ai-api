@@ -1,7 +1,13 @@
 from django.http import JsonResponse
 from django.core.paginator import Paginator
 
-from .models import WolfProduct, DragonProduct, HedgehogProduct
+from .models import (
+    WolfProduct,
+    DragonProduct,
+    HedgehogProduct,
+    ChickenProduct,
+    EggProduct,
+)
 
 
 def index(request, model):
@@ -63,4 +69,14 @@ def dragon(request):
 
 def hedgehog(request):
     model = HedgehogProduct
+    return index(request, model)
+
+
+def chicken(request):
+    model = ChickenProduct
+    return index(request, model)
+
+
+def egg(request):
+    model = EggProduct
     return index(request, model)

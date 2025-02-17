@@ -3,7 +3,13 @@ from openai import OpenAI
 from django.conf import settings
 import logging
 
-from .models import WolfAIContext, DragonAIContext, HedgehogAIContext
+from .models import (
+    WolfAIContext,
+    DragonAIContext,
+    HedgehogAIContext,
+    ChickenAIContext,
+    EggAIContext,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -19,6 +25,12 @@ class ChatGPTService:
         elif team == "hedgehog":
             key = settings.OPENAI_API_KEY_HEDGEHOG
             self.model = HedgehogAIContext
+        elif team == "chicken":
+            key = settings.OPENAI_API_KEY_CHICKEN
+            self.model = ChickenAIContext
+        elif team == "egg":
+            key = settings.OPENAI_API_KEY_EGG
+            self.model = EggAIContext
         else:
             key = None
 

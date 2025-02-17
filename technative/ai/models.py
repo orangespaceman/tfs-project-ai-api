@@ -30,3 +30,15 @@ class HedgehogAIContext(AbstractAIContext):
     class Meta:
         verbose_name = "Hedgehog AI Context"
         verbose_name_plural = "Hedgehog AI Context"
+
+
+class ChickenAIContext(AbstractAIContext):
+    class Meta:
+        verbose_name = "Chicken AI Context"
+        verbose_name_plural = "Chicken AI Context"
+
+
+class EggAIContext(AbstractAIContext):
+    class Meta:
+        verbose_name = "Egg AI Context"
+        verbose_name_plural = "Egg AI Context"

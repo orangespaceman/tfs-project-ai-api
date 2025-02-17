@@ -13,7 +13,7 @@ Retrieve products for a team.
 
 ### URL Parameters
 
-- `{team}` (required): Specifies the team for which information is requested. Possible values: "wolf", "dragon", or "hedgehog".
+- `{team}` (required): Specifies the team for which information is requested.
 
 ### Query Parameters
 
@@ -28,9 +28,9 @@ Retrieve products for a team.
 ### Example queries
 
 ```
-https://[url]/product/wolf?query=shoes
-https://[url]/product/hedgehog?sort=price
-https://[url]/product/dragon?query=summer+jackets&sort=rating&page-size=2&page=2
+https://[url]/product/hedgehog?query=shoes
+https://[url]/product/chicken?sort=price
+https://[url]/product/egg?query=summer+jackets&sort=rating&page-size=2&page=2
 ```
 
 

@@ -62,8 +62,8 @@
 
 1. Log into the admin with the superuser: http://localhost:8000
 
-    1. Add a context sentence for all three groups
-    1. Add products for all three groups
+    1. Add a context sentence for all groups
+    1. Add products for all groups
     1. Create users for each group and set their permissions to only access their relevant content
 
 1. The API can be tested using the `api-tester` HTML page from the repo root.
