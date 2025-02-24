@@ -153,6 +153,9 @@ CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(",")
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://[\w-]+\.netlify\.app$",
     r"^https://[\w-]+\.github\.io$",
+    r"^http:\/\/localhost:*([0-9]+)?$",
+    r"^https:\/\/localhost:*([0-9]+)?$",
+    r"^https:\/\/127.0.0.1:*([0-9]+)?$",
 ]
 
 CORS_ALLOW_METHODS = (
