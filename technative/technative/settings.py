@@ -155,6 +155,7 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://[\w-]+\.github\.io$",
     r"^http:\/\/localhost:*([0-9]+)?$",
     r"^https:\/\/localhost:*([0-9]+)?$",
+    r"^http:\/\/127.0.0.1:*([0-9]+)?$",
     r"^https:\/\/127.0.0.1:*([0-9]+)?$",
 ]
 
