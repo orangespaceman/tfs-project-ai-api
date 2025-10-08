@@ -1,44 +1,17 @@
 from django.db import models
+from teams.models import Team
 
 
-class AbstractAIContext(models.Model):
+class AIContext(models.Model):
+    team = models.OneToOneField(Team, on_delete=models.CASCADE)
     context = models.CharField(
         max_length=255,
         help_text="Text to be passed to ChatGPT as extra context prior to processing user input",
     )
 
     class Meta:
-        abstract = True
+        verbose_name = "AI Context"
+        verbose_name_plural = "AI Contexts"
 
     def __str__(self):
-        return self.context
-
-
-class WolfAIContext(AbstractAIContext):
-    class Meta:
-        verbose_name = "Wolf AI Context"
-        verbose_name_plural = "Wolf AI Context"
-
-
-class DragonAIContext(AbstractAIContext):
-    class Meta:
-        verbose_name = "Dragon AI Context"
-        verbose_name_plural = "Dragon AI Context"
-
-
-class HedgehogAIContext(AbstractAIContext):
-    class Meta:
-        verbose_name = "Hedgehog AI Context"
-        verbose_name_plural = "Hedgehog AI Context"
-
-
-class ChickenAIContext(AbstractAIContext):
-    class Meta:
-        verbose_name = "Chicken AI Context"
-        verbose_name_plural = "Chicken AI Context"
-
-
-class EggAIContext(AbstractAIContext):
-    class Meta:
-        verbose_name = "Egg AI Context"
-        verbose_name_plural = "Egg AI Context"
+        return f"{self.team.name} AI Context"

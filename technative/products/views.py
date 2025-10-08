@@ -1,26 +1,24 @@
 from django.http import JsonResponse
 from django.core.paginator import Paginator
-
-from .models import (
-    WolfProduct,
-    DragonProduct,
-    HedgehogProduct,
-    ChickenProduct,
-    EggProduct,
-)
+from django.shortcuts import get_object_or_404
+from teams.models import Team
+from .models import Product
 
 
-def index(request, model):
+def team_products(request, team_slug):
+    # Get the team (no authentication required)
+    team = get_object_or_404(Team, slug=team_slug)
+
     data = {"products": []}
 
-    # handle query param
+    # Get products for this team only
     query = request.GET.get("query")
     if query is None or len(query) == 0:
-        products = model.objects.all()
+        products = Product.objects.filter(team=team)
     else:
-        products = model.objects.filter(title__icontains=query)
+        products = Product.objects.filter(team=team, title__icontains=query)
 
-    # handle sort param
+    # Handle sorting
     order = ["title", "id"]
     sort = request.GET.get("sort")
     if sort == "price":
@@ -29,7 +27,7 @@ def index(request, model):
         order.insert(0, "-stars")
     products = products.order_by(*order)
 
-    # handle pagination
+    # Handle pagination
     page_size = int(request.GET.get("page-size", 10000))
     page_number = int(request.GET.get("page", 1))
     paginated_products = Paginator(products, page_size)
@@ -42,7 +40,7 @@ def index(request, model):
     else:
         products_page = []
 
-    # generate output
+    # Generate output
     for product in products_page:
         product_data = {
             "id": product.uuid,
@@ -55,28 +53,3 @@ def index(request, model):
         data["products"].append(product_data)
 
     return JsonResponse(data)
-
-
-def wolf(request):
-    model = WolfProduct
-    return index(request, model)
-
-
-def dragon(request):
-    model = DragonProduct
-    return index(request, model)
-
-
-def hedgehog(request):
-    model = HedgehogProduct
-    return index(request, model)
-
-
-def chicken(request):
-    model = ChickenProduct
-    return index(request, model)
-
-
-def egg(request):
-    model = EggProduct
-    return index(request, model)

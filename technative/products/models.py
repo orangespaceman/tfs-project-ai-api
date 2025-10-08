@@ -1,8 +1,10 @@
 import uuid
 from django.db import models
+from teams.models import Team
 
 
-class AbstractProduct(models.Model):
+class Product(models.Model):
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
@@ -22,29 +24,10 @@ class AbstractProduct(models.Model):
             (5, "5 stars"),
         ],
     )
+    image = models.ImageField(upload_to="images/products/")
 
     class Meta:
-        abstract = True
+        ordering = ["title"]
 
     def __str__(self):
         return self.title
-
-
-class WolfProduct(AbstractProduct):
-    image = models.ImageField(upload_to="images/products/wolf/")
-
-
-class DragonProduct(AbstractProduct):
-    image = models.ImageField(upload_to="images/products/dragon/")
-
-
-class HedgehogProduct(AbstractProduct):
-    image = models.ImageField(upload_to="images/products/hedgehog/")
-
-
-class ChickenProduct(AbstractProduct):
-    image = models.ImageField(upload_to="images/products/chicken/")
-
-
-class EggProduct(AbstractProduct):
-    image = models.ImageField(upload_to="images/products/egg/")

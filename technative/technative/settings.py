@@ -36,6 +36,7 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
 # Application definition
 
 INSTALLED_APPS = [
+    "teams.apps.TeamsConfig",
     "ai.apps.AiConfig",
     "products.apps.ProductsConfig",
     "corsheaders",
@@ -166,8 +167,4 @@ CORS_ALLOW_METHODS = (
 
 ## App-specific
 
-OPENAI_API_KEY_WOLF = os.getenv("OPENAI_API_KEY_WOLF")
-OPENAI_API_KEY_DRAGON = os.getenv("OPENAI_API_KEY_DRAGON")
-OPENAI_API_KEY_HEDGEHOG = os.getenv("OPENAI_API_KEY_HEDGEHOG")
-OPENAI_API_KEY_CHICKEN = os.getenv("OPENAI_API_KEY_CHICKEN")
-OPENAI_API_KEY_EGG = os.getenv("OPENAI_API_KEY_EGG")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
