@@ -152,6 +152,7 @@ MEDIA_ROOT = ROOT_DIR / "media/"
 CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(",")
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://[\w-]+\.vercel\.app$",
     r"^https://[\w-]+\.netlify\.app$",
     r"^https://[\w-]+\.github\.io$",
     r"^http:\/\/localhost:*([0-9]+)?$",
